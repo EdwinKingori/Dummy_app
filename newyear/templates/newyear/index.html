@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Is it Newyear?
+{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "newyear/newyear.css" %}">
+{% endblock  %}
+
+{% block content %}
+    <section id='content'>
+        {% if newyear %}
+            <h2>YES</h2>
+        {% else %}
+            <h2>NO</h2>
+        {% endif %}
+    </section>
+{% endblock  %}
