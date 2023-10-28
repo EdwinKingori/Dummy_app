@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Add Task
+{% endblock  %}
+
+{% block css_files %}
+    
+{% endblock  %}
+
+{% block content %}
+<h2>Add Task</h2>
+    <section> 
+        <form action="{% url "tasks:add" %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit">
+        </form>
+    <a href="{% url "tasks:index" %}">View Tasks</a>
+    </section>
+{% endblock  %}

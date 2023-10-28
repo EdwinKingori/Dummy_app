@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Tasks
+{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "tasks/tasks.css" %}">
+{% endblock  %}
+
+{% block content %}
+    <section id="list"> 
+        <ul>
+            {% for task in tasks  %}
+                <li> {{task}} </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url "tasks:add" %}">Add a New Task</a>
+    </section>
+
+{% endblock  %}
